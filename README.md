@@ -15,18 +15,23 @@ Before running the project, ensure you have the following installed:
 
    ```bash
    git clone https://github.com/mohammadFeiz/msfassesment
+   ```
 
 2. **Installing Packages**:
  
 ```bash
    npm install
+```
+
 
 3. **Run Locally**:
  
 ```bash
    npm run dev
+```
 
 4. **Run test**:
  
 ```bash
    npm run test
+```
