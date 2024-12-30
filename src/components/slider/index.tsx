@@ -12,10 +12,11 @@ const SliderOuter = styled.div`
 `;
 
 const SliderInner = styled.div`
+  box-shadow:1px -3px 20px 0px rgb(170 129 45 / 30%);
   display: flex;
   overflow: hidden;
   position: relative;
-  border: 1px solid #444;
+  border: 1px solid #222;
   border-radius: 12px;
 `;
 
@@ -23,10 +24,11 @@ const SliderCardContainer = styled.div.withConfig({
     shouldForwardProp: (prop) => prop !== "selectedIndex" && prop !== "index"
 }) <{ selectedIndex: number; index: number }>`
     min-width: 100%;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out,opacity 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity:${({ selectedIndex, index }) => selectedIndex === index ? 1 : 0.3};
     transform: ${({ selectedIndex, index }) => `translateX(-${selectedIndex * 100}%)`};
   `;
 
@@ -89,7 +91,7 @@ const Slider: FC = () => {
         });
     };
     if (!isClient) {
-        return null; 
+        return null;
     }
     return (
         <SliderOuter>
